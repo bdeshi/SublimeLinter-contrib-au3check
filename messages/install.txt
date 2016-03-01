@@ -7,4 +7,4 @@ This linter plugin for SublimeLinter provides an interface to au3check.
 Before this plugin will activate, you *must*
 follow the installation instructions here:
 
-https://github.com/SammaySarkar/SublimeLinter-contrib-au3check
+https://github.com/smsrkr/SublimeLinter-contrib-au3check
