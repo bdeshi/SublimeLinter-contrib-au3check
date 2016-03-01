@@ -16,16 +16,26 @@ from SublimeLinter.lint import Linter, util
 class Au3check(Linter):
     """Provides an interface to au3check."""
 
-    syntax = ''
-    cmd = ''
+    syntax = 'autoit'
+    cmd = 'au3check.exe -q'
     executable = None
-    version_args = '--version'
+    version_args = ''
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
-    version_requirement = '>= 1.0'
-    regex = r''
-    multiline = False
+    version_requirement = '>= 3.0.0, < 4.0.0'
+    tempfile_suffix = '-'
+
+    multiline = True
+    regex = r'''(?xi)
+            # "sourcefile/includefile"(line,col) : errortype: msg
+            # offending code
+            # ~~~~~~~~~caret
+            ^.+?\"\((?P<line>\d+)\,(?P<col>\d+)\)\s:\s
+            (?:(?P<warning>warning)|(?P<error>error)):\s(?P<message>.+)\r?\n
+            ^.*$\r?\n
+            ^.*\^\r?\n
+            '''
+
     line_col_base = (1, 1)
-    tempfile_suffix = None
     error_stream = util.STREAM_BOTH
     selectors = {}
     word_re = None
@@ -33,4 +43,3 @@ class Au3check(Linter):
     inline_settings = None
     inline_overrides = None
     comment_re = None
-
