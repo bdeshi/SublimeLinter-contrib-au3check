@@ -1,4 +1,4 @@
-SublimeLinter-contrib-au3check
+[SublimeLinter-contrib-au3check][home]
 ================================
 
 This linter plugin for [SublimeLinter][docs] provides an interface to [au3check][auc] - the official AutoIt3 syntax checker utility. It will be used with files that have the “__autoit__” syntax.
@@ -63,6 +63,7 @@ Please note that modifications should follow these coding guidelines:
 
 Thank you for helping out!
 
+[home]: https://github.com/smsrkr/SublimeLinter-contrib-au3check
 [au]: https://www.autoitscript.com/site/autoit/downloads/
 [auc]: https://www.autoitscript.com/autoit3/docs/intro/au3check.htm
 [docs]: http://sublimelinter.readthedocs.org
